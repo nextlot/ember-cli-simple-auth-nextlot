@@ -109,9 +109,11 @@ export default Base.extend({
     return new Ember.RSVP.Promise(function(resolve, reject) {
       var data                 = {};
       data = {
-        email: credentials.identification,
-        password: credentials.password,
-        site_id: credentials.site_id
+        user: {
+          email: credentials.identification,
+          password: credentials.password,
+          site_id: credentials.site_id
+        }
       };
 
       _this.makeRequest(data).then(function(response) {
