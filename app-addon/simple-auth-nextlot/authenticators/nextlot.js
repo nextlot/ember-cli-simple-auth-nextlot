@@ -67,7 +67,7 @@ export default Base.extend({
     this.resourceName                 = Configuration.resourceName;
     this.tokenAttributeName           = Configuration.tokenAttributeName;
     this.identificationAttributeName  = Configuration.identificationAttributeName;
-    this.siteIdAttributeName          = Configutation.siteIdAttributeName;
+    this.siteIdAttributeName          = Configuration.siteIdAttributeName;
   },
 
   /**
