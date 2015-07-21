@@ -42,7 +42,7 @@ export default Base.extend({
     @type String
     @default 'token'
   */
-  tokenAttributeName: 'token',
+  tokenAttributeName: 'user_token',
 
   /**
     The identification attribute name.
@@ -83,7 +83,7 @@ export default Base.extend({
     var _this            = this;
     var propertiesObject = Ember.Object.create(properties);
     return new Ember.RSVP.Promise(function(resolve, reject) {
-      if (!Ember.isEmpty(propertiesObject.get(_this.tokenAttributeName)) && !Ember.isEmpty(propertiesObject.get(_this.identificationAttributeName))) {
+      if (!Ember.isEmpty(propertiesObject.get('user_token')) && !Ember.isEmpty(propertiesObject.get('user_email'))) {
         resolve(properties);
       } else {
         reject();

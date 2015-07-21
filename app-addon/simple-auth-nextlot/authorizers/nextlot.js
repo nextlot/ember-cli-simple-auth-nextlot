@@ -29,7 +29,7 @@ export default Base.extend({
     @type String
     @default 'token'
   */
-  tokenAttributeName: 'token',
+  tokenAttributeName: 'user_token',
 
   /**
     The identification attribute name.
@@ -41,7 +41,7 @@ export default Base.extend({
     @type String
     @default 'email'
   */
-  identificationAttributeName: 'account_id',
+  identificationAttributeName: 'user_email',
 
   /**
     Authorizes an XHR request by sending the `token` and `email`
@@ -67,9 +67,11 @@ export default Base.extend({
 
   authorize: function(jqXHR, requestOptions) {
     var secureData         = this.get('session.secure');
-    var userToken          = secureData[this.tokenAttributeName];
+    var userToken          = secureData['user_token'];
+    var userEmail          = secureData['user_email'];
     if (this.get('session.isAuthenticated') && !Ember.isEmpty(userToken)) {
-      jqXHR.setRequestHeader('Authorization', 'Token ' + userToken);
+      var authData = 'token="' + userToken + '", user_email="' + userEmail + '"';
+      jqXHR.setRequestHeader('Authorization', 'Token ' + authData);
     }
   }
 });
