@@ -7,7 +7,7 @@ export default {
   name:       'simple-auth-nextlot',
   before:     'simple-auth',
   initialize: function(container, application) {
-    Configuration.load(container, ENV['simple-auth-nextlot'] || {});
+    Configuration.base.load(container, ENV['simple-auth-nextlot'] || {});
     container.register('simple-auth-authorizer:nextlot', Authorizer);
     container.register('simple-auth-authenticator:nextlot', Authenticator);
   }
