@@ -1,4 +1,4 @@
-import loadConfig from 'simple-auth/utils/load-config';
+import loadConfig from 'ember-simple-auth/utils/load-config';
 
 var defaults = {
   serverTokenEndpoint:         'https://api.nextlot.com/api/v3/tokens',

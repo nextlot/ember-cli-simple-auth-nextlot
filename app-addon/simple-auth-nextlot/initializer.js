@@ -1,5 +1,5 @@
 import Configuration from './configuration';
-import getGlobalConfig from 'simple-auth/utils/get-global-config';
+import getGlobalConfig from 'ember-simple-auth/utils/get-global-config';
 import Authenticator from 'simple-auth-nextlot/authenticators/nextlot';
 import Authorizer from 'simple-auth-nextlot/authorizers/nextlot';
 

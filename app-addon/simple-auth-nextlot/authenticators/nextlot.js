@@ -1,4 +1,4 @@
-import Base from 'simple-auth/authenticators/base';
+import Base from 'ember-simple-auth/authenticators/base';
 import Configuration from './../configuration';
 
 /**
