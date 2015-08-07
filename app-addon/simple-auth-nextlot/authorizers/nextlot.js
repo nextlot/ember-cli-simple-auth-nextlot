@@ -66,7 +66,6 @@ export default Base.extend({
   },
 
   authorize: function(jqXHR) {
-    console.log(this.get('session.secure'));
     var secureData         = this.get('session.secure');
     var userToken          = secureData['user_token'];
     var userEmail          = secureData['user_email'];
