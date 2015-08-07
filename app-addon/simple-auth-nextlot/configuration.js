@@ -1,12 +1,10 @@
 import loadConfig from 'ember-simple-auth/utils/load-config';
 
 var defaults = {
-  base: {
-    serverTokenEndpoint:         'https://api.nextlot.com/api/v3/tokens',
-    tokenAttributeName:          'token',
-    identificationAttributeName: 'email',
-    siteIdAttributeName:         'site_id'
-  }
+  serverTokenEndpoint:         'https://api.nextlot.com/api/v3/tokens',
+  tokenAttributeName:          'token',
+  identificationAttributeName: 'email',
+  siteIdAttributeName:         'site_id'
 };
 
 /**
@@ -26,62 +24,60 @@ var defaults = {
   @module simple-auth/configuration
 */
 export default {
-  base: {
-    /**
-      The endpoint on the server the authenticator acquires the auth token
-      and email from.
+  /**
+    The endpoint on the server the authenticator acquires the auth token
+    and email from.
 
-      @property serverTokenEndpoint
-      @readOnly
-      @static
-      @type String
-      @default '/users/sign_in'
-    */
-    serverTokenEndpoint: defaults.base.serverTokenEndpoint,
+    @property serverTokenEndpoint
+    @readOnly
+    @static
+    @type String
+    @default '/users/sign_in'
+  */
+  serverTokenEndpoint: defaults.serverTokenEndpoint,
 
-    /**
-      The devise resource name.
+  /**
+    The devise resource name.
 
-      @property resourceName
-      @readOnly
-      @static
-      @type String
-      @default 'user'
-    */
-    resourceName: defaults.base.resourceName,
+    @property resourceName
+    @readOnly
+    @static
+    @type String
+    @default 'user'
+  */
+  resourceName: defaults.resourceName,
 
-    /**
-      The token attribute name.
+  /**
+    The token attribute name.
 
-      @property tokenAttributeName
-      @readOnly
-      @static
-      @type String
-      @default 'token'
-    */
-    tokenAttributeName: defaults.base.tokenAttributeName,
+    @property tokenAttributeName
+    @readOnly
+    @static
+    @type String
+    @default 'token'
+  */
+  tokenAttributeName: defaults.tokenAttributeName,
 
-    /**
-      The identification attribute name. This is the parameter that is sent to
-      [serverTokenEndpoint](#SimpleAuth-Configuration-Devise-serverTokenEndpoint)
-      during the authentication process, is expected in the response and is used
-      by the
-      [Devise authorizer](#SimpleAuth-Authorizers-Devise).
+  /**
+    The identification attribute name. This is the parameter that is sent to
+    [serverTokenEndpoint](#SimpleAuth-Configuration-Devise-serverTokenEndpoint)
+    during the authentication process, is expected in the response and is used
+    by the
+    [Devise authorizer](#SimpleAuth-Authorizers-Devise).
 
-      @property identificationAttributeName
-      @readOnly
-      @static
-      @type String
-      @default 'email'
-    */
-    identificationAttributeName: defaults.base.identificationAttributeName,
+    @property identificationAttributeName
+    @readOnly
+    @static
+    @type String
+    @default 'email'
+  */
+  identificationAttributeName: defaults.identificationAttributeName,
 
-    siteIdAttributeName: defaults.base.siteIdAttributeName,
+  siteIdAttributeName: defaults.siteIdAttributeName,
 
-    /**
-      @method load
-      @private
-    */
-    load: loadConfig(defaults)
-  }
+  /**
+    @method load
+    @private
+  */
+  load: loadConfig(defaults)
 };
