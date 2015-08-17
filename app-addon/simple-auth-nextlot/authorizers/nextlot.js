@@ -65,13 +65,13 @@ export default Base.extend({
     this.identificationAttributeName = Configuration.identificationAttributeName;
   },
 
-  authorize: function(jqXHR) {
+  authorize: function(block) {
     var secureData         = this.get('session.secure');
     var userToken          = secureData['user_token'];
     var userEmail          = secureData['user_email'];
     if (this.get('session.isAuthenticated') && !Ember.isEmpty(userToken)) {
       var authData = 'token="' + userToken + '", user_email="' + userEmail + '"';
-      jqXHR.setRequestHeader('Authorization', 'Token ' + authData);
+      block('Authorization', 'Token ' + authData);
     }
   }
 });
